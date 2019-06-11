@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resource :session, only: [:create, :new, :destroy]
   resources :subs, except: [:destroy]  
 
-  resources :posts, only: [:edit, :update]
+  resources :posts, only: [:edit, :update] do
+    resources :sub_posts, only: [:new]
+  end
+  resources :sub_posts
   
 end

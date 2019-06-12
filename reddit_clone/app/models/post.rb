@@ -16,4 +16,11 @@ class Post < ApplicationRecord
  
   has_many :post_subs
 
+  
+  attr_reader :sub_id
+
+  def subs_id=(sub_id)
+    @subs_id = sub_id
+  end
+
 end
